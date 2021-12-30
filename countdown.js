@@ -19,6 +19,7 @@ const timeLeft = [
         secLeft
 
 ]
+const progress = dateNow / newYearTime * 100
 process.stdout.write('\033c')
 console.log('\n\n')
 console.log('Hitung Mundur Tahun Baru')
@@ -26,6 +27,8 @@ console.log(timeLeft[0] + ' Hari')
 console.log(timeLeft[1] + ' Jam')
 console.log(timeLeft[2] + ' Menit')
 console.log(timeLeft[3] + ' Detik')
+console.log('\n'+currentYear+' is\n'+progress.toString().substring(0, 10)+' % Complete')
+console.log('\n\nSource: https://github.com/Khuirul-Huda/new-year-countdown')
 }
 
 newYear()
