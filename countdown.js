@@ -1,6 +1,7 @@
 function newYear() {
 const currentYear = new Date().getFullYear()
 const newYear = currentYear + 1
+const currentNewYear = new Date("1 Jan "+currentYear)
 const newYearDate = "1 Jan " + newYear
 const dateNow = new Date()
 const newYearTime = new Date(newYearDate)
@@ -19,7 +20,8 @@ const timeLeft = [
         secLeft
 
 ]
-const progress = dateNow / newYearTime * 100
+
+const progress = (dateNow - currentNewYear) / (newYearTime - currentNewYear) * 100
 process.stdout.write('\033c')
 console.log('\n\n')
 console.log('Hitung Mundur Tahun Baru')
@@ -28,7 +30,7 @@ console.log(timeLeft[1] + ' Jam')
 console.log(timeLeft[2] + ' Menit')
 console.log(timeLeft[3] + ' Detik')
 console.log('\n'+currentYear+' is\n'+progress.toString().substring(0, 10)+' % Complete')
-console.log('\n\nSource: https://github.com/Khuirul-Huda/new-year-countdown')
+console.log('\n\nHave a nice day :)')
 }
 
 newYear()
